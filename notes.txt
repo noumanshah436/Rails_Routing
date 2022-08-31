@@ -1,0 +1,32 @@
+ get 'products', to: 'products#index', as: 'products'
+# ^verb  ^URI          ^controller#action    ^ refer: products_path
+
+  get 'products/:id', to: 'products#show',  as: 'product' , id: /\d+/
+  # ^verb  ^URI          ^controller  ^action    ^ refer: product_path, constraint (for numeric values only)
+
+
+*****************
+
+link to index acion:
+
+<a href="/products">Back</a>
+<%= link_to 'Back', products_path %>
+
+******************************
+
+link to show acion of particular product:
+ <!--   different ways to link_to our product from the most explicit to the most conventional. -->
+
+<%= link_to 'Details', product_path(id: product.id) %>
+<%= link_to 'Details', product_path(product) %>
+<%= link_to 'Details', product %>
+
+<a href="/products/<%= product.id %>">Details</a>
+
+
+**********************
+
+root to: 'products#index'
+
+# Generate the 2 default RESTful routes for index and show.
+resources :products, only: [:index, :show]
