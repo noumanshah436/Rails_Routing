@@ -17,14 +17,35 @@ rails g controller admin/Users
 
 https://www.youtube.com/watch?v=KmYt07MUh9c
 
-rails g scaffold admin/Sellers name:string
-rails g model Seller name:string               -- we need to create model separately
-
 http://localhost:3000/admin/sellers
 
+rails g scaffold admin/Sellers name:string
+rails db:migrate
+
+rails g scaffold animals/Cat name:string age:integer
+rails db:migrate
 
 **********************************
 
 or you can add existing controller in sub folder and then add Admin:: before controller class
 and move routes under namespace
 and at last we need to set the new links to our buttons
+
+**********************************
+
+
+# this will remove the admin prefix from the url and is still use controller in admin folder
+scope  module: :admin do
+  resources :students
+end
+
+Note: change links in case you change scope or namespace accordingly
+
+**********************************
+
+if you want admin prefix to your routes and not want the namespace
+( i.e you want normal controller in Controller folder not in any sub folder)
+
+scope :admin do
+  resources :students
+end

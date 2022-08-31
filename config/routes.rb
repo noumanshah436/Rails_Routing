@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-  
   # get 'products/index'
   # get 'products/show'
 
@@ -24,10 +22,20 @@ Rails.application.routes.draw do
   end
 
 
+  namespace :animals do
+    resources :cats
+  end
+
+  # scope module: :animals do
+  #     resources :cats
+  # end
+
+  # this will remove the admin prefix from the url and is still use controller in admin folder
   # scope  module: :admin do
   #   resources :students
   # end
 
+  # use prefix admin and use normal controller in controllers folder
   # scope :admin do
   #   resources :students
   # end

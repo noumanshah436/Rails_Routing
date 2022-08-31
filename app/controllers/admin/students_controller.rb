@@ -1,6 +1,9 @@
 class Admin::StudentsController < ApplicationController
   before_action :set_admin_student, only: %i[ show edit update destroy ]
 
+  # http://localhost:3000/admin/students
+
+
   # GET /admin/students or /admin/students.json
   def index
     @admin_students = Admin::Student.all
