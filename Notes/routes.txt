@@ -1,0 +1,3 @@
+member routes: routes that needs the id to perform action (like  show, edit, update destroy)
+
+collection routes : routes that do not need id ti perform action ( lik index, create , new)
