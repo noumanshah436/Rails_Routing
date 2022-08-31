@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 # ^verb  ^URI          ^controller#action    ^ refer: products_path
 
   get 'products/:id', to: 'products#show',  as: 'product' , id: /\d+/
-  # ^verb  ^URI          ^controller  ^action    ^ refer: product_path, constraint (for numeric values only)
+  # ^verb  ^URI          ^controller  ^action    ^ refer: product_path  ^constraint (for numeric values only)
 
+  get 'about' => 'products#about'
 end

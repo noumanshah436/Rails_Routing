@@ -30,3 +30,10 @@ root to: 'products#index'
 
 # Generate the 2 default RESTful routes for index and show.
 resources :products, only: [:index, :show]
+
+
+********************
+
+http://localhost:3000/about
+
+get 'about' => 'products#about'
