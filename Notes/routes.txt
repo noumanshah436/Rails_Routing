@@ -1,3 +1,30 @@
 member routes: routes that needs the id to perform action (like  show, edit, update destroy)
 
 collection routes : routes that do not need id ti perform action ( lik index, create , new)
+
+***************************
+
+namespace routing is used when you want to organize group of controllers under a namespace
+
+***************************
+
+create controler in subdirectory:
+
+rails g controller admin/Users
+
+
+**********************************
+
+https://www.youtube.com/watch?v=KmYt07MUh9c
+
+rails g scaffold admin/Sellers name:string
+rails g model Seller name:string               -- we need to create model separately
+
+http://localhost:3000/admin/sellers
+
+
+**********************************
+
+or you can add existing controller in sub folder and then add Admin:: before controller class
+and move routes under namespace
+and at last we need to set the new links to our buttons

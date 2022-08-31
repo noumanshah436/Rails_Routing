@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+   
+
+  namespace :admin do
+    resources :students
+  end
   # get 'products/index'
   # get 'products/show'
 
@@ -9,4 +14,29 @@ Rails.application.routes.draw do
   # ^verb  ^URI          ^controller  ^action    ^ refer: product_path  ^constraint (for numeric values only)
 
   get 'about' => 'products#about'
+
+  # namespace :admin do
+  #   resources :foos
+  # end
+
+  namespace :admin do
+    get 'users', to: "users#index"
+    resources :students
+    resources :sellers
+  end
+
+  # namespace :admin do
+  #   # resources :users, only: :index
+  #   get 'users', to: "admin/users#index"
+  # end
+
+  #
+  # scope  module: :admin do
+  #   resources :students
+  # end
+
+  # scope  :admin do
+  #   resources :students
+  # end
+
 end
