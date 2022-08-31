@@ -11,9 +11,7 @@ Rails.application.routes.draw do
 
   get 'about' => 'products#about'
 
-  # namespace :admin do
-  #   resources :foos
-  # end
+  get 'blog', to: redirect('https://guides.rubyonrails.org/v5.2/routing.html')
 
   namespace :admin do
     get 'users', to: "users#index"
@@ -39,5 +37,7 @@ Rails.application.routes.draw do
   # scope :admin do
   #   resources :students
   # end
+
+  # get "*path", to: redirect("/errors")
 
 end
