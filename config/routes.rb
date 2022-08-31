@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-   
 
-  namespace :admin do
-    resources :students
-  end
+
+  
   # get 'products/index'
   # get 'products/show'
 
@@ -25,17 +23,12 @@ Rails.application.routes.draw do
     resources :sellers
   end
 
-  # namespace :admin do
-  #   # resources :users, only: :index
-  #   get 'users', to: "admin/users#index"
-  # end
 
-  #
   # scope  module: :admin do
   #   resources :students
   # end
 
-  # scope  :admin do
+  # scope :admin do
   #   resources :students
   # end
 
