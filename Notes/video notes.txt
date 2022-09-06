@@ -7,6 +7,18 @@ get 'products/:id', to: 'products#show',  as: 'product' , id: /\d+/
 
 *****************
 
+get 'form', to: 'welcome#form', as: 'form'
+
+redirect_to :form   
+render "form"          -- can also use string
+
+****
+
+ redirect_to action: 'form'                       
+
+
+*****************
+
 link to index acion:
 
 <a href="/products">Back</a>

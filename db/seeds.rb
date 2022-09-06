@@ -8,12 +8,24 @@
 
 Product.create(name: 'Cream Cheese',
   description: 'Delicious cheese for your bagel.',
-  price: 3.34)
+  price: 1000)
 
 Product.create(name: 'Shoe Phone',
   description: 'All super spies have phones in their shoes.',
-  price: 83.99)
+  price: 1000)
 
 Product.create(name: 'Robot Vacuum',
   description: 'Cleans your floors while you drink wine.',
-  price: 113.34)
+  price: 1000)
+
+Product.create(name: 'Cream Cheese',
+  description: 'Delicious cheese for your bagel.',
+  price: 2000)
+
+Product.create(name: 'Shoe Phone',
+  description: 'All super spies have phones in their shoes.',
+  price: 2000)
+
+Product.create(name: 'Robot Vacuum',
+  description: 'Cleans your floors while you drink wine.',
+  price: 2000)

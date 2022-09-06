@@ -1,0 +1,41 @@
+
+
+
+
+
+The big difference between the two methods, is that when you call present? it initializes ActiveRecord for each record found(!), while exists? does not
+
+to show this I added after_initialize on User. it prints: 'You have initialized an object!'
+
+User.where(name: 'mike').present?
+
+User Load (8.1ms) SELECT "users".* FROM "users" WHERE "users"."name" = $1 ORDER BY users.id ASC  [["name", 'mike']]
+You have initialized an object!
+You have initialized an object!
+
+
+User.exists?(name: 'mike')
+User Exists (2.4ms)  SELECT 1 AS one FROM "users" WHERE "users"."name" = $1 ORDER BY users.id ASC LIMIT 1  [["name", 'mike']]
+
+
+*************************
+
+
+present?
+present? is an ActiveSupport extension to Object. It's usually used as a test for an object's general "falsiness". From the documentation:
+
+An object is present if it’s not blank?. An object is blank if it’s false, empty, or a whitespace string.
+
+So, for example:
+
+[ "", " ", false, nil, [], {} ].any?(&:present?)
+# => false
+
+
+exists?
+exists? is from ActiveResource. From its documentation:
+
+Asserts the existence of a resource, returning true if the resource is found.
+
+Note.create(:title => 'Hello, world.', :body => 'Nothing more for now...')
+Note.exists?(1) # => true
